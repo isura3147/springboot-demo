@@ -1,22 +1,15 @@
 package edu.icet.controller;
 
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/customer")
-public class CustomerController {
+@RequestMapping("/item")
+public class ItemController {
 
     @GetMapping("/name")
-    public String getName() {
-        return "Saman";
+    public String getItem() {
+        return "glasses";
     }
-
-    @GetMapping("/age")
-    public int getAge() {
-        return 23;
-    }
-
 }
