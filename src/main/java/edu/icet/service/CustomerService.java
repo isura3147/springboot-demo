@@ -1,5 +1,8 @@
 package edu.icet.service;
 
-public interface CustomerService {
+import edu.icet.model.entity.CustomerEntity;
+import java.util.List;
 
+public interface CustomerService {
+    List<CustomerEntity> getCustomers();
 }
