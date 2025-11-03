@@ -36,10 +36,7 @@ public class CustomerController {
 
     @GetMapping("/allCustomers")
     public ArrayList<Customer> getCustomerList() {
-        customerList.add(new Customer("1", "Jack", "Manhatten", 100.00));
-        customerList.add(new Customer("2", "Jill", "New York", 200.00));
-        customerList.add(new Customer("3", "Sarah", "Statten Island", 300.00));
-        customerList.add(new Customer("4", "Jason", "Golden State", 400.00));
+
         return customerList;
     }
 }
