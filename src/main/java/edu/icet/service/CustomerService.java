@@ -8,4 +8,6 @@ public interface CustomerService {
     List<CustomerEntity> getCustomers();
 
     void addCustomer(Customer customer);
+
+    Customer findCustomer(String id);
 }

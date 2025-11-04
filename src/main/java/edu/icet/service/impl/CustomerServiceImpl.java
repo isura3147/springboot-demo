@@ -29,4 +29,10 @@ public class CustomerServiceImpl implements CustomerService {
                 customer.getSalary()
         ));
     }
+
+    @Override
+    public Customer findCustomer(String id) {
+         CustomerEntity customerEntity = customerRepository.findById(id).get();
+        return new Customer(customerEntity.getId(), customerEntity.getName(), customerEntity.getAddress(), customerEntity.getSalary());
+    }
 }
