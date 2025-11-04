@@ -5,9 +5,7 @@ import edu.icet.model.Customer;
 import edu.icet.model.entity.CustomerEntity;
 import edu.icet.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +37,6 @@ public class CustomerController {
         );
     }
 
-
     @GetMapping("/allCustomers")
     public List<Customer> getCustomerList() {
         List<CustomerEntity> customerEntities = customerService.getCustomers();
@@ -55,5 +52,10 @@ public class CustomerController {
         }
 
         return customerList;
+    }
+
+    @PostMapping("/add")
+    public void addCustomer(@RequestBody Customer customer) {
+        customerService.addCustomer(customer);
     }
 }
