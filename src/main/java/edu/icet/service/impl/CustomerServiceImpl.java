@@ -7,6 +7,7 @@ import edu.icet.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -34,5 +35,20 @@ public class CustomerServiceImpl implements CustomerService {
     public Customer findCustomer(String id) {
          CustomerEntity customerEntity = customerRepository.findById(id).get();
         return new Customer(customerEntity.getId(), customerEntity.getName(), customerEntity.getAddress(), customerEntity.getSalary());
+    }
+
+    @Override
+    public List<Customer> findCustomers(String name) {
+        List<CustomerEntity> customerEntities = customerRepository.findByName(name);
+        List<Customer> customers = new ArrayList<>();
+        for (CustomerEntity customerEntity : customerEntities) {
+            customers.add(new Customer(
+                    customerEntity.getId(),
+                    customerEntity.getName(),
+                    customerEntity.getAddress(),
+                    customerEntity.getSalary()
+            ));
+        }
+        return customers;
     }
 }

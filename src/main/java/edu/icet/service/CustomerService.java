@@ -10,4 +10,6 @@ public interface CustomerService {
     void addCustomer(Customer customer);
 
     Customer findCustomer(String id);
+
+    List<Customer> findCustomers(String name);
 }

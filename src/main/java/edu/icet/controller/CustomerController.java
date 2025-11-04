@@ -54,16 +54,20 @@ public class CustomerController {
         return customerList;
     }
 
-    @GetMapping("/findby/{id}")
+    @GetMapping("/findById/{id}")
     public Customer findById(@PathVariable String id) {
         return customerService.findCustomer(id);
     }
 
 
+    @GetMapping("/findByName/{name}")
+    public List<Customer> findByName(@PathVariable String name) {
+        return customerService.findCustomers(name);
+    }
+
     @PostMapping("/add")
     public void addCustomer(@RequestBody Customer customer) {
         customerService.addCustomer(customer);
     }
-
 
 }
