@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/crm-server?createDatabaseIfNotExist=true
+    username: root
+    password: isura1234
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
