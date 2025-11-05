@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/customer")
+@CrossOrigin(origins = "http://localhost:5173")
 public class CustomerController {
 
     @Autowired
@@ -71,3 +72,4 @@ public class CustomerController {
     }
 
 }
+
